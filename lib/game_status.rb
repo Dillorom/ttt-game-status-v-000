@@ -46,12 +46,6 @@ def over?(board)
 end
 
 def winner(board)
-   if   position_1 == position_2 && position_2 == position_3 && position_taken?(board,win_combination[0]) == "X"
-     "X"
-   elsif
-       position_1 == position_2 && position_2 == position_3 && position_taken?(board,win_combination[0]) == "O"
-       "O"
-    else
-      nil
-    end
+   if won?(board)
+     board[won?(board)[0]]
 end
