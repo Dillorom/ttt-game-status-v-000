@@ -50,12 +50,22 @@ def over?(board)
 end
 
 def winner(board)
-  if   position_1 == position_2 && position_2 == position_3 && position_taken?(board,win_combination[0]) == "X"
-    "X"
-  elsif
-      position_1 == position_2 && position_2 == position_3 && position_taken?(board,win_combination[0]) == "O"
-      "O"
-    else
-      nil
+  # if   position_1 == position_2 && position_2 == position_3 && position_taken?(board,win_combination[0]) == "X"
+  #   "X"
+  # elsif
+  #     position_1 == position_2 && position_2 == position_3 && position_taken?(board,win_combination[0]) == "O"
+  #     "O"
+  #   else
+      # nil
+      if win_combination.all? do |index|
+        index == "X"
+        "X"
+      elsif win_combination.all? do |index|
+        index == "O"
+        "O"
+      else
+        nil
+        
+      end
   end
 end
